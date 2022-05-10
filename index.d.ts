@@ -39,5 +39,8 @@ export class Flow {
     get states(): string[];
     get currentState(): string;
     get possibleTransitions(): string[];
+    isValidTransition(state: string): boolean;
+    get possibleEvents(): string[];
+    isValidEvent(eventName: string): boolean;
 }
 

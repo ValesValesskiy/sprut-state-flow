@@ -67,6 +67,7 @@ flow.event('next');
 start(...args: any[]): void /* Инициализация flow */
 event(eventName: string | number | symbol, ...args: any[]): void /* Событие состояния */
 stop(): void /* Остановка flow с задействованием финального обработчика */
+isValidTransition(state: string): boolean /* Проверка, является ли стейт валидным для перехода на него с нынешнего стейта */
 get maxPendingMillisecondsTime(): number | null /* Время ожидания обработки события состояния до ошибки */
 get isPending(): boolean /* Булево флаг ожидания обработки события состояния(до ошибки или окончания обработки) */
 get isResolved(): boolean /* Инверсия isPendingб обработка события закончена */

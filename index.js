@@ -190,6 +190,18 @@ class Flow {
     get possibleTransitions() {
         return [ ...this[FlowSymbols.stateConfigs][this.currentState].transitions ];
     }
+
+    isValidTransition(state) {
+        return !!~this[FlowSymbols.stateConfigs][this.currentState].transitions.indexOf(state);
+    }
+
+    get possibleEvents() {
+        return Object.keys(this[FlowSymbols.stateConfigs][this.currentState].events);
+    }
+
+    isValidEvent(eventName) {
+        return !!~Object.keys(this[FlowSymbols.stateConfigs][this.currentState].events).indexOf(eventName);
+    }
 }
 
 module.exports = {
